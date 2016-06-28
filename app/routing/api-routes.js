@@ -23,7 +23,7 @@ module.exports = function(app){
 	// ---------------------------------------------------------------------------
 
 	app.get('/api/friends', function(req, res){
-		res.json(tableData);
+		res.json(userData);
 	});
 
 	// API POST Requests
@@ -31,11 +31,11 @@ module.exports = function(app){
 	// In each of the below cases, when a user submits form data (a JSON object)
 	// ...the JSON is pushed to the appropriate Javascript array
 	// (ex. User fills out a reservation request... this data is then sent to the server...
-	// Then the server saves the data to the tableData array)
+	// Then the server saves the data to the userData array)
 	// ---------------------------------------------------------------------------
 
 	app.post('/api/friends', function(req, res){
-		tableData.push(req.body);
+		userData.push(req.body);
 		res.json(); // KEY LINE
 	});
 
