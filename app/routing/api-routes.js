@@ -23,7 +23,7 @@ module.exports = function(app){
 	// ---------------------------------------------------------------------------
 
 	app.get('/api/friends', function(req, res){
-		res.json(userData);
+		res.json(friendsData);
 	});
 
 	// API POST Requests
@@ -35,8 +35,20 @@ module.exports = function(app){
 	// ---------------------------------------------------------------------------
 
 	app.post('/api/friends', function(req, res){
-		userData.push(req.body);
-		res.json(); // KEY LINE
+		console.log(req.body);
+		friendsData.push(req.body);
+		// //logic goes here to get the match
+		// function compareMatches(arr1, arr2) {
+		// 		var diff = 0;
+		// 		for (var i = 0; i < arr1.length; i++) {
+		// 			var num =  Math.abs(arr1[i] - arr2[i]);
+		// 			diff += num;
+		// 		}
+		// 		C.push(diff);
+		// 	}
+
+		// // send back match \/ \/ \/
+		// res.json(matchJSON); // KEY LINE
 	});
 
 }
